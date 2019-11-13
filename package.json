@@ -47,7 +47,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/polyfill": "7.4.4",
+    "@babel/polyfill": "7.7.0",
     "@scispike/aspectify": "1.0.0",
     "bunyan": "1.8.12",
     "bunyaner": "1.1.0",
