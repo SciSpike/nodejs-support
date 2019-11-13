@@ -71,7 +71,7 @@
     "babel-eslint": "10.0.1",
     "chai": "4.2.0",
     "cls-hooked": "4.2.2",
-    "copyfiles": "2.1.0",
+    "copyfiles": "2.1.1",
     "dirty-chai": "2.0.1",
     "fs-extra": "8.1.0",
     "intercept-stdout": "0.1.2",
