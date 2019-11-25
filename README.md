@@ -1,6 +1,26 @@
 # `nodejs-support`
 This package contains various building blocks for use in Node.js-based applications.
 
+> DEPRECATION NOTE:
+> Since the time this package was created, SciSpike has been acquired by [Northscaler](https://www.northscaler.com), and this package has become too big.
+> Consequently, each functional area is being rebranded under the `@northscaler` npm scope and released independently as its own module, as identified in issue https://github.com/SciSpike/nodejs-support/issues/3.
+> There will be no further development on this module.
+> See each section of this readme for more information about which `@northscaler` package to look for when you're upgrading.
+> You can see all of Northscaler's public Node.js modules at https://www.npmjs.com/search?q=%40northscaler.
+
+Below is a list of the functional areas and their new module names.
+It will be updated as progress is made.
+
+| Functional Area | New Module | Status |
+| --------------- | ---------- | ------ |
+| `services` | TBD | incomplete |
+| `entities` | TBD | incomplete |
+| `errors` | TBD | incomplete |
+| `enums` | TBD | incomplete |
+| `logger` | TBD | incomplete |
+| `require` | TBD | incomplete |
+| `contexts` | [`@northscaler/continuation-local-storage`](https://www.npmjs.com/package/@northscaler/continuation-local-storage) |  complete |
+
 ## `services`
 This folder contains various classes to help you write well-behaved services.
 
@@ -125,6 +145,9 @@ This module actually eats its own dog food, using this object to export director
 See `src/main/index.js` or `src/main/entities/index.js` for examples
 
 ## `contexts`
+
+> DEPRECATION NOTE:
+> This functionality has been rebranded and released as [`@northscaler/continuation-local-storage`](https://www.npmjs.com/package/@northscaler/continuation-local-storage).
 
 Contexts allow you to place information in a continuation-local storage space (like Java's thread-local storage).
 
