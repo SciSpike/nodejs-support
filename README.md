@@ -15,11 +15,16 @@ It will be updated as progress is made.
 | --------------- | ---------- | ------ |
 | `services` | TBD | incomplete |
 | `entities` | TBD | incomplete |
-| `errors` | TBD | incomplete |
+| `errors` | TBD | [`@northscaler/error-support`](https://www.npmjs.com/package/@northscaler/error-support)✝︎ |
 | `enums` | TBD | incomplete |
 | `logger` | TBD | incomplete |
 | `require` | TBD | incomplete |
 | `contexts` | [`@northscaler/continuation-local-storage`](https://www.npmjs.com/package/@northscaler/continuation-local-storage) |  complete |
+
+✝︎:
+Not all error classes are here.
+Those errors having to do with persistence (`ObjectExistsError`, `ObjectNotFoundError`, `UnknownDiscriminatorError`, `NonuniqueCriteriaError`) will be located in a different module.
+`UnknownEnumError` will be in the `@northscaler/enum-support` module.
 
 ## `services`
 This folder contains various classes to help you write well-behaved services.
