@@ -95,6 +95,9 @@ const DayOfWeek = require('@scispike/nodejs-support').entities.DayOfWeek
 
 ## `errors`
 
+> DEPRECATION NOTE:
+> This functionality has been rebranded and released as [`@northscaler/error-support`](https://www.npmjs.com/package/@northscaler/error-support).
+
 Usage example:
 ```javascript
 const IllegalArgumentError = require('@scispike/nodejs-support').errors.IllegalArgumentError
