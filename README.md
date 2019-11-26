@@ -1,6 +1,31 @@
 # `nodejs-support`
 This package contains various building blocks for use in Node.js-based applications.
 
+> DEPRECATION NOTE:
+> Since the time this package was created, SciSpike has been acquired by [Northscaler](https://www.northscaler.com), and this package has become too big.
+> Consequently, each functional area is being rebranded under the `@northscaler` npm scope and released independently as its own module, as identified in issue https://github.com/SciSpike/nodejs-support/issues/3.
+> There will be no further development on this module.
+> See each section of this readme for more information about which `@northscaler` package to look for when you're upgrading.
+> You can see all of Northscaler's public Node.js modules at https://www.npmjs.com/search?q=%40northscaler.
+
+Below is a list of the functional areas and their new module names.
+It will be updated as progress is made.
+
+| Functional Area | New Module | Status |
+| --------------- | ---------- | ------ |
+| `services` | TBD | incomplete |
+| `entities` | TBD | incomplete |
+| `errors` | TBD | [`@northscaler/error-support`](https://www.npmjs.com/package/@northscaler/error-support)✝︎ |
+| `enums` | TBD | incomplete |
+| `logger` | TBD | incomplete |
+| `require` | TBD | incomplete |
+| `contexts` | [`@northscaler/continuation-local-storage`](https://www.npmjs.com/package/@northscaler/continuation-local-storage) |  complete |
+
+✝︎:
+Not all error classes are here.
+Those errors having to do with persistence (`ObjectExistsError`, `ObjectNotFoundError`, `UnknownDiscriminatorError`, `NonuniqueCriteriaError`) will be located in a different module.
+`UnknownEnumError` will be in the `@northscaler/enum-support` module.
+
 ## `services`
 This folder contains various classes to help you write well-behaved services.
 
@@ -31,6 +56,7 @@ If your method `throw`s an `Error`, the aspect catches it and returns a response
     message: ...,
     code: ..., // if your error has a code property
     info: ..., // if your error has an info property
+    cause: ..., // recursive cause(s) error here if your error has a `cause` property
     stack: ..., // if you used @returnsServiceResponse({ includeStacktrace: true})
   },
   meta: {
@@ -41,11 +67,15 @@ If your method `throw`s an `Error`, the aspect catches it and returns a response
 ```
 
 ## `entities`
+Contains some convenient entities that are expected to be persisted into some datastore.
 
 Usage example:
 ```javascript
-const DayOfWeek = require('@scispike/nodejs-support').entities.DayOfWeek
-// ...use DayOfWeek.SUNDAY, etc
+const moment = require('moment-timezone')
+const Period = require('@scispike/nodejs-support/entities/Period')
+
+const period = new Period(moment().utc(), moment.utc().add(1, 'day'))
+// now use period methods
 ```
 
 This folder contains
@@ -112,6 +142,9 @@ This module actually eats its own dog food, using this object to export director
 See `src/main/index.js` or `src/main/entities/index.js` for examples
 
 ## `contexts`
+
+> DEPRECATION NOTE:
+> This functionality has been rebranded and released as [`@northscaler/continuation-local-storage`](https://www.npmjs.com/package/@northscaler/continuation-local-storage).
 
 Contexts allow you to place information in a continuation-local storage space (like Java's thread-local storage).
 
